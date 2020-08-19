@@ -13,10 +13,31 @@ class StateCard extends Component {
 
   // Functions to handle button presses.
   handleButton1 = () => {
-    alert("Button 1 pressed!");
+    let currentStatus = this.state.button1
+    if(currentStatus === "On!"){
+        this.setState({button1: "off..."})
+    }
+    else{
+        this.setState({button1: "On!"})
+    }
+    
   }
-  handleButton2 = () => {}
-  handleButton3 = () => {}
+  handleButton2 = () => {
+      let currentStatus = this.state.button2
+      this.setState({button2: (currentStatus + 1)})
+  }
+  handleButton3 = () => {
+      let currentStatus = this.state.button3
+      if(currentStatus === "You"){
+        this.setState({button3: "are"})
+    }
+    else if (currentStatus === "are"){
+        this.setState({button3: "cool"})
+    }
+    else{
+        this.setState({button3: "You"})
+    }
+  }
 
   // The render function
   render() {
@@ -31,13 +52,13 @@ class StateCard extends Component {
             <p>Current status: {this.state.button1}</p>
           </div>
           <div className="item">
-            <button onClick="FIX_THIS_EVENT">
+            <button onClick={this.handleButton2}>
               Button 2
             </button>
             <p>Current count: {this.state.button2}</p>
           </div>
           <div className="item">
-            <button onClick="FIX_THIS_EVENT">button 3</button>
+            <button onClick={this.handleButton3}>button 3</button>
             <p>Current word: {this.state.button3}</p>
           </div>
         </div>
