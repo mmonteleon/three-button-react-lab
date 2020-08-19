@@ -34,11 +34,11 @@ class StateCard extends Component {
             <button onClick="FIX_THIS_EVENT">
               Button 2
             </button>
-            <p>Current count: ADD_STATE_HERE</p>
+            <p>Current count: {this.state.button2}</p>
           </div>
           <div className="item">
             <button onClick="FIX_THIS_EVENT">button 3</button>
-            <p>Current word: ADD_STATE_HERE</p>
+            <p>Current word: {this.state.button3}</p>
           </div>
         </div>
       </div>
